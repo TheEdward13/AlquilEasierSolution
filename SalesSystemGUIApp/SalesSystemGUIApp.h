@@ -1,5 +1,5 @@
 #pragma once
-#include "DepaForm.h"
+#include "ApartmentForm.h"
 
 
 
@@ -234,9 +234,9 @@ namespace SalesSystemGUIApp {
 	}
 	private: System::Void departamentosToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		//Form^ depaForm = gcnew Form();
-		DepaForm^ depaForm = gcnew DepaForm();
-		depaForm->MdiParent = this;
-		depaForm->Show();
+		ApartmentForm^ apartmentForm = gcnew ApartmentForm();
+		apartmentForm -> MdiParent = this;
+		apartmentForm -> Show();
 	}
 	};
 }

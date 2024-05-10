@@ -120,10 +120,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ApartmentForm.cpp" />
     <ClCompile Include="DepaForm.cpp" />
     <ClCompile Include="SalesSystemGUIApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ApartmentForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="DepaForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -132,6 +136,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ApartmentForm.resx">
+      <DependentUpon>ApartmentForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DepaForm.resx">
       <DependentUpon>DepaForm.h</DependentUpon>
     </EmbeddedResource>

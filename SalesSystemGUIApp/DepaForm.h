@@ -10,6 +10,7 @@ namespace SalesSystemGUIApp {
 	using namespace System::Drawing;
 	using namespace AlquilEasierModel;
 	using namespace AlquilEasierService;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
 	/// Resumen de depaForm
@@ -151,11 +152,12 @@ namespace SalesSystemGUIApp {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(43, 82);
+			this->label3->Location = System::Drawing::Point(43, 91);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(55, 13);
+			this->label3->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->label3->Size = System::Drawing::Size(127, 13);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"NumDepa";
+			this->label3->Text = L"Número de departamento";
 			this->label3->Click += gcnew System::EventHandler(this, &DepaForm::label3_Click);
 			// 
 			// label4
@@ -195,21 +197,22 @@ namespace SalesSystemGUIApp {
 			// 
 			// txtNumDep
 			// 
-			this->txtNumDep->Location = System::Drawing::Point(116, 75);
+			this->txtNumDep->Location = System::Drawing::Point(197, 88);
 			this->txtNumDep->Name = L"txtNumDep";
 			this->txtNumDep->Size = System::Drawing::Size(100, 20);
 			this->txtNumDep->TabIndex = 8;
+			this->txtNumDep->TextChanged += gcnew System::EventHandler(this, &DepaForm::txtNumDep_TextChanged);
 			// 
 			// txtPric
 			// 
-			this->txtPric->Location = System::Drawing::Point(134, 121);
+			this->txtPric->Location = System::Drawing::Point(197, 121);
 			this->txtPric->Name = L"txtPric";
 			this->txtPric->Size = System::Drawing::Size(100, 20);
 			this->txtPric->TabIndex = 9;
 			// 
 			// txtAcci
 			// 
-			this->txtAcci->Location = System::Drawing::Point(134, 155);
+			this->txtAcci->Location = System::Drawing::Point(197, 158);
 			this->txtAcci->Name = L"txtAcci";
 			this->txtAcci->Size = System::Drawing::Size(100, 20);
 			this->txtAcci->TabIndex = 11;
@@ -220,6 +223,7 @@ namespace SalesSystemGUIApp {
 			this->txtEstado->Name = L"txtEstado";
 			this->txtEstado->Size = System::Drawing::Size(100, 20);
 			this->txtEstado->TabIndex = 12;
+			this->txtEstado->TextChanged += gcnew System::EventHandler(this, &DepaForm::txtEstado_TextChanged);
 			// 
 			// btnAlterPhoto
 			// 
@@ -260,6 +264,7 @@ namespace SalesSystemGUIApp {
 			this->dgvDepas->Name = L"dgvDepas";
 			this->dgvDepas->Size = System::Drawing::Size(662, 203);
 			this->dgvDepas->TabIndex = 17;
+			this->dgvDepas->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &DepaForm::dgvDepas_CellContentClick);
 			// 
 			// DepartamentoId
 			// 
@@ -355,7 +360,6 @@ namespace SalesSystemGUIApp {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"DepaForm";
 			this->Text = L"Mantenimiento de Departamentos";
-			this->Load += gcnew System::EventHandler(this, &DepaForm::DepaForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbphoto))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvDepas))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
@@ -374,37 +378,44 @@ namespace SalesSystemGUIApp {
 	}
 		   void ClearControls() {
 			   txtid->Text = "";
-			   txtName->Text = "";
-			   txtba->Text = "";
-			   txtFloor->Text = "";
-			   txthab->Text = "";
-			   txtPrice->Text = "";
+			   txtEstado->Text = "";
+			   txtNumDep->Text = "";
+			   txtPric->Text = "";
+			   txtAcci->Text = "";
 
 		   }
 	private: System::Void nuevoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		ClearControls();
 		btnAdd->Enabled = true;
 		btnUpdate->Enabled = false;
-		btnDelete->Enabled = false;
-
 	}
 	private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 		int id = Convert::ToInt32(txtid->Text);
 		String^ estado = txtEstado->Text;
-		int txtNumDep = Convert::ToInt32(txtNumDep->Text);
-		Double^ pic = Convert::ToDouble(txtPric->Text);
-		String^ acci = Convert::txtAcci->Text;
+		int numdepartamento = Convert::ToInt32(txtNumDep->Text);
+		double pic = Convert::ToDouble(txtPric->Text);
+		String^ acci = txtAcci->Text;
 
 
 		Departamento^ depa = gcnew Departamento();
 		depa->Id = id;
 		depa->Estado = estado;
-		depa->NumDepa = txtNumDep;
+		depa->NumDepa = numdepartamento;
 		depa->Precio = pic;
 		depa->Accidentes = acci;
-
-		Service::addApartment(depa);
+		 
+		//Service::ddApartment(depa);
 	}
 	
+private: System::Void txtEstado_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txtid_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dgvDepas_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void txtNumDep_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

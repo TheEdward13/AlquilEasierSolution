@@ -8,14 +8,16 @@ using namespace System::Collections::Generic;
 namespace AlquilEasierService {
 	public ref class Service
 	{
+	private:
 		//DB DEPARTAMENOS
-		List<Departamento^>^ DepaDB = gcnew List <Departamento^>();
+		static List<Departamento^>^ DepaDB = gcnew List <Departamento^>();
 		//Métodos para mantenimiento (CRUD)
 
-		int addApartment(Departamento^);
-		int ModifyApartment(Departamento^);
-		List<Departamento^>^ ConsultaDepa();
-		Departamento^ ConsultaDepaByID(int depaID);
+	public:
+		static int AddApartment(Departamento^);
+		static int ModifyApartment(Departamento^);
+		static List<Departamento^>^ ConsultaDepa();
+		static Departamento^ ConsultaDepaByID(int depaID);
 
 
 	};

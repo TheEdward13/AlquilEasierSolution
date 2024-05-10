@@ -3,10 +3,10 @@
 #include "AlquilEasierService.h"
 
 
-int AlquilEasierService::Service::addApartment(Departamento^ Departamento)
+int AlquilEasierService::Service::AddApartment(Departamento^ Departamento)
 {
     DepaDB->Add(Departamento);
-    return Departamento->Id;
+    return Departamento ->Id;
 }
 
 int AlquilEasierService::Service::ModifyApartment(Departamento^ Departamento)
