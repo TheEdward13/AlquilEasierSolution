@@ -355,6 +355,7 @@ private: System::Void nuevoToolStripMenuItem_Click(System::Object^ sender, Syste
 		depa->NumDepa = numdepartamento;
 		depa->Precio = pic;
 		depa->Accidentes = acci;
+		//hbhb
 
 		Service::AddApartment(depa);
 		showApartment();
