@@ -18,7 +18,6 @@ namespace AlquilEasierModel {
         property Double Alquiler;
         property String^ Fecha;
 
-        void GenerarDeuda();
         void RegistrarDeuda();
         void ConsultarDeuda();
         void ConsultarEstado();

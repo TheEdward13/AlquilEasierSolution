@@ -10,9 +10,6 @@
   */
 
 
-void AlquilEasierModel::Deudas::GenerarDeuda() {
-
-}
 
 void AlquilEasierModel::Deudas::RegistrarDeuda() {
 

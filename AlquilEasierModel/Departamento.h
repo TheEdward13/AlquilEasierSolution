@@ -8,7 +8,9 @@
 #define _DEPARTAMENTO_H
 
 using namespace System;
+
 namespace AlquilEasierModel {
+    [Serializable]
     public ref class Departamento {
     public:
         property int Id;
@@ -17,6 +19,7 @@ namespace AlquilEasierModel {
         property double Precio;
         property String^ Estado;
         property String^ Accidentes;
+        property array<Byte>^ Photo;
 
         void RegistrarDepa();
         void ModificarDatos();
