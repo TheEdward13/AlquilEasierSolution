@@ -9,6 +9,7 @@
 
 using namespace System;
 namespace AlquilEasierModel {
+    [Serializable]
     public ref class Usuario {
     public:
         property int Id;
@@ -17,6 +18,13 @@ namespace AlquilEasierModel {
         property String^ Telefono;
         property String^ Correo;
         property String^ DNI;
+
+        //LOGIN
+        property String^ Username;
+        property String^ Password;
+        property String^ Name;
+        property String^ LastName;
+        property String^ Status;
 
         void registrarUsuario();
 

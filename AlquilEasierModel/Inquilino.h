@@ -10,6 +10,7 @@
 
 using namespace System;
 namespace AlquilEasierModel {
+    [Serializable]
     public ref class Inquilino : public Usuario {
     public:
         void Registro();
@@ -17,6 +18,7 @@ namespace AlquilEasierModel {
         void RegistrarQuejas();
         void SituacionAccidentes();
 
+        Inquilino() {};
         Inquilino(int id, String^ nombre, String^ apellido, String^ telefono,
             String^ correo, String^ dni) :
             Usuario(id, nombre, apellido, telefono, correo, dni) {}

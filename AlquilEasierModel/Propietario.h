@@ -10,6 +10,7 @@
 
 using namespace System;
 namespace AlquilEasierModel {
+    [Serializable]
     public ref class Propietario : public Usuario {
     public:
 
@@ -21,9 +22,17 @@ namespace AlquilEasierModel {
         void InformeQuejas();
         void SitucionAccidentes();
 
+        Propietario() {};
         Propietario(int id, String^ nombre, String^ apellido, String^ telefono,
             String^ correo, String^ dni) :
             Usuario(id, nombre, apellido, telefono, correo, dni) {}
+
+        /*Manager() {}
+        Manager(int id, String^ username, String^ password, String^ name, String^ lastName,
+            String^ status, double quota) :
+            User(id, username, password, name, lastName, status) {
+            Quota = quota;
+        }*/
 
     };
 }
