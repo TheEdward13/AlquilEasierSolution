@@ -11,9 +11,10 @@ namespace AlquilEasierService {
 	private:
 		//DB DEPARTAMENOS
 		static List<Departamento^>^ DepaDB = gcnew List <Departamento^>();
-		//Métodos para mantenimiento (CRUD)
+		
 
 	public:
+		//Métodos para mantenimiento (CRUD)
 		static int AddApartment(Departamento^);
 		static int ModifyApartment(Departamento^);
 		static List<Departamento^>^ ConsultaDepa();
@@ -22,4 +23,3 @@ namespace AlquilEasierService {
 
 	};
 }
-//jj

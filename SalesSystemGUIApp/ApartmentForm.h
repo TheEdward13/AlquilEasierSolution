@@ -61,7 +61,8 @@ namespace SalesSystemGUIApp {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::Button^ Clean;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textDimen;
+
 
 
 
@@ -108,7 +109,7 @@ namespace SalesSystemGUIApp {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->Clean = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textDimen = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvApartment))->BeginInit();
 			this->SuspendLayout();
@@ -159,6 +160,7 @@ namespace SalesSystemGUIApp {
 			this->pictureBox1->Size = System::Drawing::Size(205, 162);
 			this->pictureBox1->TabIndex = 5;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &ApartmentForm::pictureBox1_Click);
 			// 
 			// txtid
 			// 
@@ -183,10 +185,11 @@ namespace SalesSystemGUIApp {
 			// 
 			// txtPric
 			// 
-			this->txtPric->Location = System::Drawing::Point(204, 108);
+			this->txtPric->Location = System::Drawing::Point(204, 112);
 			this->txtPric->Name = L"txtPric";
 			this->txtPric->Size = System::Drawing::Size(100, 20);
 			this->txtPric->TabIndex = 9;
+			this->txtPric->TextChanged += gcnew System::EventHandler(this, &ApartmentForm::txtPric_TextChanged);
 			// 
 			// btnAdd
 			// 
@@ -206,6 +209,7 @@ namespace SalesSystemGUIApp {
 			this->btnUpdate->TabIndex = 16;
 			this->btnUpdate->Text = L"Modificar";
 			this->btnUpdate->UseVisualStyleBackColor = true;
+			this->btnUpdate->Click += gcnew System::EventHandler(this, &ApartmentForm::btnUpdate_Click);
 			// 
 			// btnAlterPhoto
 			// 
@@ -215,6 +219,7 @@ namespace SalesSystemGUIApp {
 			this->btnAlterPhoto->TabIndex = 17;
 			this->btnAlterPhoto->Text = L"Actualizar Foto";
 			this->btnAlterPhoto->UseVisualStyleBackColor = true;
+			this->btnAlterPhoto->Click += gcnew System::EventHandler(this, &ApartmentForm::btnAlterPhoto_Click);
 			// 
 			// dgvApartment
 			// 
@@ -227,6 +232,7 @@ namespace SalesSystemGUIApp {
 			});
 			this->dgvApartment->Location = System::Drawing::Point(45, 277);
 			this->dgvApartment->Name = L"dgvApartment";
+			this->dgvApartment->RowHeadersVisible = false;
 			this->dgvApartment->Size = System::Drawing::Size(544, 253);
 			this->dgvApartment->TabIndex = 18;
 			this->dgvApartment->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ApartmentForm::dataGridView1_CellContentClick);
@@ -283,12 +289,12 @@ namespace SalesSystemGUIApp {
 			this->label4->TabIndex = 21;
 			this->label4->Text = L"Metros cuadrados:";
 			// 
-			// textBox1
+			// textDimen
 			// 
-			this->textBox1->Location = System::Drawing::Point(204, 175);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 22;
+			this->textDimen->Location = System::Drawing::Point(204, 175);
+			this->textDimen->Name = L"textDimen";
+			this->textDimen->Size = System::Drawing::Size(100, 20);
+			this->textDimen->TabIndex = 22;
 			// 
 			// ApartmentForm
 			// 
@@ -296,7 +302,7 @@ namespace SalesSystemGUIApp {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Info;
 			this->ClientSize = System::Drawing::Size(638, 567);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textDimen);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->Clean);
 			this->Controls->Add(this->dgvApartment);
@@ -328,6 +334,7 @@ namespace SalesSystemGUIApp {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ApartmentForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		showApartment();
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -339,30 +346,36 @@ namespace SalesSystemGUIApp {
 			   txtEstado->Text = "";
 			   txtNumDep->Text = "";
 			   txtPric->Text = "";
+			   textDimen->Text = "";
 		   }
 
 private: System::Void nuevoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 }
-	private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		int id = Convert::ToInt32(txtid->Text);
-		String^ estado = txtEstado->Text;
-		int numdepartamento = Convert::ToInt32(txtNumDep->Text);
-		double pic = Convert::ToDouble(txtPric->Text);
+	int id = Convert::ToInt32(txtid->Text);
+	String^ estado = txtEstado->Text;
+	int numdepartamento = Convert::ToInt32(txtNumDep->Text);
+	double pic = Convert::ToDouble(txtPric->Text);
 
-		Departamento^ depa = gcnew Departamento();
-		depa->Id = id;
-		depa->Estado = estado;
-		depa->NumDepa = numdepartamento;
-		depa->Precio = pic;
+	Departamento^ depa = gcnew Departamento();
+	depa->Id = id;
+	depa->Estado = estado;
+	depa->NumDepa = numdepartamento;
+	depa->Precio = pic;
 		
-		
+	if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
+		System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
+		pictureBox1->Image->Save(ms, System::Drawing::Imaging::ImageFormat::Jpeg);
+		depa->Photo = ms->ToArray();
+	}
 
-		Service::AddApartment(depa);
-		showApartment();
+	Service::AddApartment(depa);
+	showApartment();
 }
-		   void showApartment() {
+
+	void showApartment() {
 			   List<Departamento^>^ departList = Service::ConsultaDepa();
 			   dgvApartment->Rows->Clear();
 			   for (int i = 0; i < departList->Count; i++) {
@@ -370,7 +383,32 @@ private: System::Void nuevoToolStripMenuItem_Click(System::Object^ sender, Syste
 					   ""+departList[i]->Dimensiones, departList[i]->Estado});
 			   }
 		   }
+
+
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	
+	int depaId = Int32::Parse(dgvApartment->Rows[dgvApartment->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString());
+
+	Departamento^ depa = Service::ConsultaDepaByID(depaId);
+	if (depa != nullptr) {
+		txtid->Text = Convert::ToString(depa->Id); 
+	
+		txtNumDep->Text = "" + depa->NumDepa;
+		txtPric->Text = "" + depa->Precio;
+		txtEstado->Text = "" + depa->Estado;
+		textDimen->Text = "" + depa->Dimensiones;
+
+		if (depa->Photo != nullptr) {
+			System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream(depa->Photo);
+			pictureBox1->Image = Image::FromStream(ms);
+		}
+		else {
+			pictureBox1->Image = nullptr;
+			pictureBox1->Invalidate();
+		}
+	}
+
+
 }
 private: System::Void archivoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -382,6 +420,52 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 	   
 
+
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	   void SearchAndPutImageOn(PictureBox^ pb) {
+		   OpenFileDialog^ opfd = gcnew OpenFileDialog();
+		   opfd->Filter = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
+		   if (opfd->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			   pb->Image = gcnew Bitmap(opfd->FileName);
+		   }
+	   }
+
+private: System::Void btnAlterPhoto_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenFileDialog^ ofd = gcnew OpenFileDialog();
+	ofd->Filter = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
+	if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		pictureBox1->Image = gcnew Bitmap(ofd->FileName);
+	}
+}
+
+
+private: System::Void txtPric_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	int id = Convert::ToInt32(txtid->Text);
+	String^ estado = txtEstado->Text;
+	int numDepa = Convert::ToInt32(txtNumDep->Text);
+	double dimensiones = Convert::ToDouble(textDimen->Text);
+	double precio = Convert::ToDouble(txtPric->Text);
+
+	Departamento^ depa = gcnew Departamento();
+	depa->Id = id;
+	depa->Estado = estado;
+	depa->NumDepa = numDepa;
+	depa->Dimensiones = dimensiones;
+	depa->Precio = precio;
+
+	if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
+		System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
+		pictureBox1->Image->Save(ms, System::Drawing::Imaging::ImageFormat::Jpeg);
+		depa->Photo = ms->ToArray();
+	}
+
+	Service::ModifyApartment(depa);
+	showApartment();
+}
 
 };
 }

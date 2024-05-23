@@ -140,13 +140,13 @@ namespace SalesSystemGUIApp {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		ADMIN_inquilino^ inquilino = gcnew ADMIN_inquilino();
-		inquilino->MdiParent = this;
+		//inquilino->MdiParent = this;
 		inquilino->Show();
 	}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	ApartmentForm^ apartmentForm = gcnew ApartmentForm();
-	apartmentForm->MdiParent = this;
-	apartmentForm->Show();
-}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		ApartmentForm^ apartmentForm = gcnew ApartmentForm();
+		//apartmentForm->MdiParent = this;
+		apartmentForm->Show();
+	}
 };
 }

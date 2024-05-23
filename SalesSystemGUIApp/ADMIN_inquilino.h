@@ -144,7 +144,7 @@ namespace SalesSystemGUIApp {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		ADMIN_inq_recibos^ inq_recibos = gcnew ADMIN_inq_recibos();
-		inq_recibos->MdiParent = this;
+		//inq_recibos->MdiParent = this;
 		inq_recibos->Show();
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -154,7 +154,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	ADMIN_inq_infodep^ inq_infodep = gcnew ADMIN_inq_infodep();
-	inq_infodep->MdiParent = this;
+	//inq_infodep->MdiParent = this;
 	inq_infodep->Show();
 }
 };
