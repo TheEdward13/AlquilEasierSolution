@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -120,30 +120,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ADMIN_inquilino.cpp" />
+    <ClCompile Include="ADMIN_inq_infodep.cpp" />
+    <ClCompile Include="ADMIN_inq_recibos.cpp" />
+    <ClCompile Include="ADMIN_interfaz.cpp" />
     <ClCompile Include="ApartmentForm.cpp" />
-    <ClCompile Include="DepaForm.cpp" />
+    <ClCompile Include="Login.cpp" />
     <ClCompile Include="SalesSystemGUIApp.cpp" />
+    <ClCompile Include="USER_infoDepa.cpp" />
+    <ClCompile Include="USER_interfaz.cpp" />
+    <ClCompile Include="USER_Recibos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ADMIN_inquilino.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ADMIN_inq_infodep.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ADMIN_inq_recibos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ADMIN_interfaz.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ApartmentForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="DepaForm.h">
+    <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SalesSystemGUIApp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="USER_infoDepa.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="USER_interfaz.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="USER_Recibos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ADMIN_inquilino.resx">
+      <DependentUpon>ADMIN_inquilino.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN_inq_infodep.resx">
+      <DependentUpon>ADMIN_inq_infodep.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN_inq_recibos.resx">
+      <DependentUpon>ADMIN_inq_recibos.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN_interfaz.resx">
+      <DependentUpon>ADMIN_interfaz.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApartmentForm.resx">
       <DependentUpon>ApartmentForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepaForm.resx">
-      <DependentUpon>DepaForm.h</DependentUpon>
+    <EmbeddedResource Include="USER_Recibos.resx">
+      <DependentUpon>USER_Recibos.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesSystemGUIApp.resx">
       <DependentUpon>SalesSystemGUIApp.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER_infoDepa.resx">
+      <DependentUpon>USER_infoDepa.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER_interfaz.resx">
+      <DependentUpon>USER_interfaz.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
