@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{70695950-0AA6-483E-82CE-93F1F8E1357E}</ProjectGuid>
+    <ProjectGuid>{9DDB1526-BEF0-4FF5-957A-2BEA20173ECB}</ProjectGuid>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>SalesSystemGUIApp</RootNamespace>
+    <RootNamespace>AlquilEasierConsole</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -76,121 +76,76 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
-      <EntryPointSymbol>Main</EntryPointSymbol>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AlquilEasierConsole.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ADMIN_inquilino.cpp" />
-    <ClCompile Include="ADMIN_inq_infodep.cpp" />
-    <ClCompile Include="ADMIN_inq_recibos.cpp" />
-    <ClCompile Include="ADMIN_interfaz.cpp" />
-    <ClCompile Include="ApartmentForm.cpp" />
-    <ClCompile Include="LoginForm.cpp" />
-    <ClCompile Include="SalesSystemGUIApp.cpp" />
-    <ClCompile Include="USER_infoDepa.cpp" />
-    <ClCompile Include="USER_interfaz.cpp" />
-    <ClCompile Include="USER_Recibos.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ADMIN_inquilino.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ADMIN_inq_infodep.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ADMIN_inq_recibos.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ADMIN_interfaz.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ApartmentForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="LoginForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SalesSystemGUIApp.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="USER_infoDepa.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="USER_interfaz.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="USER_Recibos.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ADMIN_inquilino.resx">
-      <DependentUpon>ADMIN_inquilino.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ADMIN_inq_infodep.resx">
-      <DependentUpon>ADMIN_inq_infodep.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ADMIN_inq_recibos.resx">
-      <DependentUpon>ADMIN_inq_recibos.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ADMIN_interfaz.resx">
-      <DependentUpon>ADMIN_interfaz.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApartmentForm.resx">
-      <DependentUpon>ApartmentForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="USER_Recibos.resx">
-      <DependentUpon>USER_Recibos.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalesSystemGUIApp.resx">
-      <DependentUpon>SalesSystemGUIApp.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="USER_infoDepa.resx">
-      <DependentUpon>USER_infoDepa.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="USER_interfaz.resx">
-      <DependentUpon>USER_interfaz.h</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlquilEasierModel\AlquilEasierModel.vcxproj">

@@ -19,7 +19,12 @@ namespace AlquilEasierService {
 		static int ModifyApartment(Departamento^);
 		static List<Departamento^>^ ConsultaDepa();
 		static Departamento^ ConsultaDepaByID(int depaID);
+		static int DeleteApartment(int depaID);
 
+
+		static int AddUsuario(Usuario^ usuario);
+		static List<Usuario^>^ QueryAllUsuarios();
+		static Usuario^ ValidateUsuario(String^ username, String^ password);
 
 	};
 }

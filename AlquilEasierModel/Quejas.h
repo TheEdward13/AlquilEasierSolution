@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 #pragma once
 
 #ifndef _QUEJAS_H
@@ -18,9 +14,6 @@ namespace AlquilEasierModel {
         property String^ Descripcion;
         property String^ Fecha;
     };
-
-
-
 }
 
 #endif //_QUEJAS_H

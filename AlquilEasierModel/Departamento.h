@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 #pragma once
 
 #ifndef _DEPARTAMENTO_H
@@ -15,6 +11,7 @@ namespace AlquilEasierModel {
     public:
         property int Id;
         property int NumDepa;
+        property int Piso;
         property double Dimensiones;
         property double Precio;
         property String^ Estado;

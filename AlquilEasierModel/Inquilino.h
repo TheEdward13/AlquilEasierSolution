@@ -10,16 +10,18 @@
 
 using namespace System;
 namespace AlquilEasierModel {
-    public ref class Inquilino : public Usuario {
-    public:
-        void Registro();
-        void ModificarDatos();
-        void RegistrarQuejas();
-        void SituacionAccidentes();
+    [Serializable]
+        public ref class Inquilino : public Usuario {
+        public:
+            void Registro();
+            void ModificarDatos();
+            void RegistrarQuejas();
+            void SituacionAccidentes();
 
-        Inquilino(int id, String^ nombre, String^ apellido, String^ telefono,
-            String^ correo, String^ dni) :
-            Usuario(id, nombre, apellido, telefono, correo, dni) {}
+            Inquilino() {};
+            Inquilino(int id, String^ nombre, String^ apellido, String^ telefono,
+                String^ correo, String^ dni) :
+                Usuario(id, nombre, apellido, telefono, correo, dni) {}
 
     };
 }

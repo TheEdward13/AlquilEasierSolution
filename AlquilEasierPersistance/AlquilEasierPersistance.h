@@ -1,10 +1,24 @@
 #pragma once
 
 using namespace System;
+using namespace AlquilEasierModel;
+using namespace System::Collections::Generic;
 
 namespace AlquilEasierPersistance {
-	public ref class Class1
+	public ref class Persistance
 	{
-		// TODO: Agregue aquí los métodos de esta clase.
+	private:
+		static void PersistBinaryFile(String^ fileName, Object^ persistObject);
+		static Object^ LoadBinaryFile(String^ fileName);
+		static List<Usuario^>^ usuariosListDB = gcnew List<Usuario^>();
+
+	public:
+		static String^ BIN_USUARIO_FILE_NAME = "usuarios.bin";
+
+		//Operaciones para Login
+		static int AddUsuario(Usuario^ usuario);
+		static List<Usuario^>^ QueryAllUsuarios();
+
 	};
 }
+

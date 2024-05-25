@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 #pragma once
 
 #ifndef _USUARIO_H
@@ -18,12 +14,17 @@ namespace AlquilEasierModel {
         property String^ Correo;
         property String^ DNI;
 
+
+        //LOGIN
+        property String^ Username;
+        property String^ Password;
+        property String^ Name;
+        property String^ LastName;
+        property String^ Status;
+
         void registrarUsuario();
-
         bool verificarCredenciales();
-
         void modificarUsuario();
-
         void eliminarUsuario();
 
         Usuario();

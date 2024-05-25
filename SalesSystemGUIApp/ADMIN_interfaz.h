@@ -116,7 +116,7 @@ namespace SalesSystemGUIApp {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(179, 53);
 			this->button3->TabIndex = 4;
-			this->button3->Text = L"Agregar departamento";
+			this->button3->Text = L"Departamento";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &ADMIN_interfaz::button3_Click);
 			// 
