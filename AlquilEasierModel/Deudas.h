@@ -5,6 +5,7 @@
 
 using namespace System;
 namespace AlquilEasierModel {
+    [Serializable]
     public ref class Deudas {
     public:
         property int Id;
@@ -12,12 +13,22 @@ namespace AlquilEasierModel {
         property Double Luz;
         property Double Internet;
         property Double Alquiler;
-        property String^ Fecha;
+        property Double Deuda;
+        property Double Seguridad;
 
         void RegistrarDeuda();
         void ConsultarDeuda();
         void ConsultarEstado();
     };
+
+    [Serializable]
+    public ref class fechas {
+    public:
+        property int Id;
+        property String^ Month;
+        property String^ Year;
+    };
+
 }
 
 #endif //_DEUDAS_H

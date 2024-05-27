@@ -10,11 +10,9 @@ namespace AlquilEasierModel {
     public ref class Departamento {
     public:
         property int Id;
-        property int NumDepa;
-        property int Piso;
         property double Dimensiones;
         property double Precio;
-        property String^ Estado;
+        property bool Estado;
         property String^ Accidentes;
         property array<Byte>^ Photo;
 
@@ -23,6 +21,16 @@ namespace AlquilEasierModel {
         void ConsultarDatos();
         void SituacionAccidentes();
     };
+
+    [Serializable]
+    public ref class Floor {
+    public:
+        property int Id;
+        property int Piso;
+        property int NumDepa;
+        
+    };
+
 }
 
 #endif //_DEPARTAMENTO_H

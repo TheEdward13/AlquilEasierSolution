@@ -105,7 +105,7 @@ namespace SalesSystemGUIApp {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(179, 53);
 			this->button2->TabIndex = 3;
-			this->button2->Text = L"Pesonal";
+			this->button2->Text = L"Personal";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// button3
@@ -140,13 +140,28 @@ namespace SalesSystemGUIApp {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		ADMIN_inquilino^ inquilino = gcnew ADMIN_inquilino();
-		//inquilino->MdiParent = this;
+		inquilino->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_interfaz::ADMIN_inquilinoClosed);
 		inquilino->Show();
 	}
+
+	// Función para mostrar nuevamente ADMIN_interfaz cuando ApartmentForm se cierra
+	void ADMIN_interfaz::ADMIN_inquilinoClosed(System::Object^ sender, FormClosedEventArgs^ e)
+	{
+		this->Show();
+	}
+
+
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		ApartmentForm^ apartmentForm = gcnew ApartmentForm();
-		//apartmentForm->MdiParent = this;
+		apartmentForm->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_interfaz::ApartmentFormClosed);
 		apartmentForm->Show();
+		this->Hide();
+	}
+
+	// Función para mostrar nuevamente ADMIN_interfaz cuando ApartmentForm se cierra
+	void ADMIN_interfaz::ApartmentFormClosed(System::Object^ sender, FormClosedEventArgs^ e)
+	{
+		this->Show();
 	}
 };
 }

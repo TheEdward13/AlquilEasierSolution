@@ -1,4 +1,6 @@
 #pragma once
+//#include "ADMIN_interfaz.h"
+
 
 namespace SalesSystemGUIApp {
 
@@ -15,6 +17,7 @@ namespace SalesSystemGUIApp {
 	/// <summary>
 	/// Resumen de ApartmentForm
 	/// </summary>
+	/// 
 	public ref class ApartmentForm : public System::Windows::Forms::Form
 	{
 	public:
@@ -40,34 +43,20 @@ namespace SalesSystemGUIApp {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::TextBox^ txtId;
-
-
 	private: System::Windows::Forms::TextBox^ txtNumDep;
 	private: System::Windows::Forms::TextBox^ txtPric;
-
 	private: System::Windows::Forms::Button^ btnAdd;
 	private: System::Windows::Forms::Button^ btnUpdate;
 	private: System::Windows::Forms::Button^ btnAlterPhoto;
 	private: System::Windows::Forms::DataGridView^ dgvApartment;
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ Clean;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textDimen;
 	private: System::Windows::Forms::Button^ button1;
-
-
 	private: System::Windows::Forms::TextBox^ textPiso;
-
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::CheckBox^ txtHabilitado;
 	private: System::Windows::Forms::Button^ button2;
@@ -75,23 +64,15 @@ namespace SalesSystemGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Piso;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ NumDepa;
 
-
-
-
-
-
-
-
-
-
-
 	protected:
-
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+
+
+	
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -112,6 +93,9 @@ namespace SalesSystemGUIApp {
 			this->btnUpdate = (gcnew System::Windows::Forms::Button());
 			this->btnAlterPhoto = (gcnew System::Windows::Forms::Button());
 			this->dgvApartment = (gcnew System::Windows::Forms::DataGridView());
+			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Piso = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->NumDepa = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Clean = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textDimen = (gcnew System::Windows::Forms::TextBox());
@@ -120,9 +104,6 @@ namespace SalesSystemGUIApp {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->txtHabilitado = (gcnew System::Windows::Forms::CheckBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->Id = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Piso = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->NumDepa = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvApartment))->BeginInit();
 			this->SuspendLayout();
@@ -248,9 +229,26 @@ namespace SalesSystemGUIApp {
 			this->dgvApartment->Location = System::Drawing::Point(63, 37);
 			this->dgvApartment->Name = L"dgvApartment";
 			this->dgvApartment->RowHeadersVisible = false;
-			this->dgvApartment->Size = System::Drawing::Size(204, 540);
+			this->dgvApartment->Size = System::Drawing::Size(213, 540);
 			this->dgvApartment->TabIndex = 18;
 			this->dgvApartment->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ApartmentForm::dataGridView1_CellClick);
+			// 
+			// Id
+			// 
+			this->Id->HeaderText = L"Id";
+			this->Id->Name = L"Id";
+			this->Id->Width = 45;
+			// 
+			// Piso
+			// 
+			this->Piso->HeaderText = L"Piso";
+			this->Piso->Name = L"Piso";
+			this->Piso->Width = 65;
+			// 
+			// NumDepa
+			// 
+			this->NumDepa->HeaderText = L"N° Departamento";
+			this->NumDepa->Name = L"NumDepa";
 			// 
 			// Clean
 			// 
@@ -327,26 +325,13 @@ namespace SalesSystemGUIApp {
 			this->button2->TabIndex = 27;
 			this->button2->Text = L"Atrás";
 			this->button2->UseVisualStyleBackColor = false;
-			// 
-			// Id
-			// 
-			this->Id->HeaderText = L"Id";
-			this->Id->Name = L"Id";
-			// 
-			// Piso
-			// 
-			this->Piso->HeaderText = L"Piso";
-			this->Piso->Name = L"Piso";
-			// 
-			// NumDepa
-			// 
-			this->NumDepa->HeaderText = L"N° Departamento";
-			this->NumDepa->Name = L"NumDepa";
+			this->button2->Click += gcnew System::EventHandler(this, &ApartmentForm::button2_Click);
 			// 
 			// ApartmentForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::Info;
 			this->ClientSize = System::Drawing::Size(647, 618);
 			this->ControlBox = false;
@@ -382,6 +367,8 @@ namespace SalesSystemGUIApp {
 
 		}
 #pragma endregion
+
+
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ApartmentForm_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -394,7 +381,6 @@ namespace SalesSystemGUIApp {
 	}
 		   void ClearControls() {
 			   txtId->Text = "";
-			   //txtEstado->Text = "";
 			   txtNumDep->Text = "";
 			   txtPric->Text = "";
 			   textDimen->Text = "";
@@ -407,34 +393,38 @@ private: System::Void nuevoToolStripMenuItem_Click(System::Object^ sender, Syste
 private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	int id = Convert::ToInt32(txtId->Text);
-	//String^ estado = txtEstado->Text;
 	int numdepartamento = Convert::ToInt32(txtNumDep->Text);
 	double pic = Convert::ToDouble(txtPric->Text);
+	int piso = Convert::ToInt32(textPiso->Text);
+	double metros = Convert::ToDouble(textDimen->Text);
+
 
 	Departamento^ depa = gcnew Departamento();
 	depa->Id = id;
-	//depa->Estado = estado;
-	depa->NumDepa = numdepartamento;
 	depa->Precio = pic;
-		
+	depa->Estado = txtHabilitado->Checked;
+	depa->Dimensiones = metros;
+
+	Floor^ floor = gcnew Floor();
+	floor->Piso = piso;
+	floor->NumDepa = numdepartamento;
+
 	if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
 		System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
 		pictureBox1->Image->Save(ms, System::Drawing::Imaging::ImageFormat::Jpeg);
 		depa->Photo = ms->ToArray();
 	}
-
 	Service::AddApartment(depa);
 	showApartment();
 }
 
 	void showApartment() {
-			   List<Departamento^>^ departList = Service::ConsultaDepa();
-			   dgvApartment->Rows->Clear();
-			   for (int i = 0; i < departList->Count; i++) {
-				   dgvApartment->Rows->Add(gcnew array<String^>{"" +departList[i]->Id, ""+departList[i]->NumDepa, ""+departList[i]->Precio,
-					   ""+departList[i]->Dimensiones, departList[i]->Estado});
-			   }
-		   }
+		List<Departamento^>^ departList = Service::ConsultaDepa();
+		dgvApartment->Rows->Clear();
+		for (int i = 0; i < departList->Count; i++) {
+			dgvApartment->Rows->Add(gcnew array<String^>{"" +departList[i]->Id});
+		}
+	}
 
 
 private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -444,11 +434,11 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	Departamento^ depa = Service::ConsultaDepaByID(depaId);
 	if (depa != nullptr) {
 		txtId->Text = Convert::ToString(depa->Id);
-	
-		txtNumDep->Text = "" + depa->NumDepa;
+		//textPiso->Text = "" + depa->Piso;
+		//txtNumDep->Text = "" + depa->NumDepa;
 		txtPric->Text = "" + depa->Precio;
-		//txtEstado->Text = "" + depa->Estado;
 		textDimen->Text = "" + depa->Dimensiones;
+		txtHabilitado->Checked = depa->Estado;
 
 		if (depa->Photo != nullptr) {
 			System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream(depa->Photo);
@@ -466,12 +456,7 @@ private: System::Void archivoToolStripMenuItem_Click(System::Object^ sender, Sys
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	ClearControls();
-
 }
-
-	   
-
-
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 	   void SearchAndPutImageOn(PictureBox^ pb) {
@@ -481,7 +466,6 @@ private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArg
 			   pb->Image = gcnew Bitmap(opfd->FileName);
 		   }
 	   }
-
 private: System::Void btnAlterPhoto_Click(System::Object^ sender, System::EventArgs^ e) {
 	OpenFileDialog^ ofd = gcnew OpenFileDialog();
 	ofd->Filter = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
@@ -489,24 +473,24 @@ private: System::Void btnAlterPhoto_Click(System::Object^ sender, System::EventA
 		pictureBox1->Image = gcnew Bitmap(ofd->FileName);
 	}
 }
-
-
 private: System::Void txtPric_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	int id = Convert::ToInt32(txtId->Text);
-	//String^ estado = txtEstado->Text;
 	int numDepa = Convert::ToInt32(txtNumDep->Text);
 	double dimensiones = Convert::ToDouble(textDimen->Text);
 	double precio = Convert::ToDouble(txtPric->Text);
+	int piso = Convert::ToInt32(textPiso->Text);
+	double metros = Convert::ToDouble(textDimen->Text);
 
 	Departamento^ depa = gcnew Departamento();
 	depa->Id = id;
-	//depa->Estado = estado;
-	depa->NumDepa = numDepa;
-	depa->Dimensiones = dimensiones;
+	//depa->Piso = piso;
+	//depa->NumDepa = numDepa;
 	depa->Precio = precio;
+	depa->Dimensiones = metros;
+	depa->Estado = txtHabilitado->Checked;
 
 	if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
 		System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
@@ -517,11 +501,14 @@ private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^
 	Service::ModifyApartment(depa);
 	showApartment();
 }
-
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	int id = Convert::ToInt32(txtId->Text);
 	Service::DeleteApartment(id);
 	showApartment();
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+
 }
 };
 }

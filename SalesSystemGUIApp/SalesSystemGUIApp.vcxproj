@@ -147,6 +147,7 @@
     <ClInclude Include="ApartmentForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ComboBoxItem.h" />
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

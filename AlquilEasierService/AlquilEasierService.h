@@ -14,17 +14,24 @@ namespace AlquilEasierService {
 		
 
 	public:
-		//MÃ©todos para mantenimiento (CRUD)
-		static int AddApartment(Departamento^);
-		static int ModifyApartment(Departamento^);
+		//CRUD DE DEPARTAMENTOS
+		static int AddApartment(Departamento^ depa);
+		static int ModifyApartment(Departamento^ depa);
+		static int DeleteApartment(int depaID);
 		static List<Departamento^>^ ConsultaDepa();
 		static Departamento^ ConsultaDepaByID(int depaID);
-		static int DeleteApartment(int depaID);
 
-
+		//CRUD DE USUARIOS
 		static int AddUsuario(Usuario^ usuario);
 		static List<Usuario^>^ QueryAllUsuarios();
 		static Usuario^ ValidateUsuario(String^ username, String^ password);
 
+		//CRUD DE DEUDAS
+		static int AddDeuda(Deudas^ deuda);
+		static int ModifyDeuda(Deudas^ deuda);
+		static int DeleteDeuda(int deudaID);
+		static List<Deudas^>^ ConsultaDeuda();
+		
+		//añadir para la fecha
 	};
 }
