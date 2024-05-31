@@ -125,6 +125,7 @@
     <ClCompile Include="ADMIN_inq_recibos.cpp" />
     <ClCompile Include="ADMIN_interfaz.cpp" />
     <ClCompile Include="ApartmentForm.cpp" />
+    <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="SalesSystemGUIApp.cpp" />
     <ClCompile Include="USER_infoDepa.cpp" />
     <ClCompile Include="USER_interfaz.cpp" />
@@ -146,7 +147,8 @@
     <ClInclude Include="ApartmentForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="SalesSystemGUIApp.h">
+    <ClInclude Include="ComboBoxItem.h" />
+    <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="USER_infoDepa.h">
@@ -177,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USER_Recibos.resx">
       <DependentUpon>USER_Recibos.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalesSystemGUIApp.resx">
-      <DependentUpon>SalesSystemGUIApp.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USER_infoDepa.resx">
       <DependentUpon>USER_infoDepa.h</DependentUpon>

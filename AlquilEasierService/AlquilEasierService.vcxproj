@@ -148,6 +148,9 @@
     <ProjectReference Include="..\AlquilEasierModel\AlquilEasierModel.vcxproj">
       <Project>{d21f6e28-4677-47d9-894e-3838b943d51e}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\AlquilEasierPersistance\AlquilEasierPersistance.vcxproj">
+      <Project>{e675e2a7-9329-44ee-a691-553ce16db10e}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

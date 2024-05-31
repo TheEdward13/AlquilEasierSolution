@@ -232,7 +232,7 @@ namespace SalesSystemGUIApp {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(120, 57);
 			this->button1->TabIndex = 42;
-			this->button1->Text = L"Registro de recibos";
+			this->button1->Text = L"Historial de recibos";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// button2
