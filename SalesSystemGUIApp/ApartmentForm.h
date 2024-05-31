@@ -394,37 +394,44 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 
 	int id = Convert::ToInt32(txtId->Text);
 	int numdepartamento = Convert::ToInt32(txtNumDep->Text);
-	double pic = Convert::ToDouble(txtPric->Text);
+	double precio = Convert::ToDouble(txtPric->Text);
 	int piso = Convert::ToInt32(textPiso->Text);
-	double metros = Convert::ToDouble(textDimen->Text);
-
+	double dimensiones = Convert::ToDouble(textDimen->Text);
 
 	Departamento^ depa = gcnew Departamento();
-	depa->Id = id;
-	depa->Precio = pic;
-	depa->Estado = txtHabilitado->Checked;
-	depa->Dimensiones = metros;
 
-	Floor^ floor = gcnew Floor();
-	floor->Piso = piso;
-	floor->NumDepa = numdepartamento;
+	depa->Id = id;
+	depa->Precio = precio;
+	depa->Estado = txtHabilitado->Checked;
+	depa->Dimensiones = dimensiones;
+	depa->Piso = piso;
+	depa->NumDep = numdepartamento; 
 
 	if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
 		System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
 		pictureBox1->Image->Save(ms, System::Drawing::Imaging::ImageFormat::Jpeg);
 		depa->Photo = ms->ToArray();
 	}
+
 	Service::AddApartment(depa);
 	showApartment();
 }
 
-	void showApartment() {
-		List<Departamento^>^ departList = Service::ConsultaDepa();
-		dgvApartment->Rows->Clear();
-		for (int i = 0; i < departList->Count; i++) {
-			dgvApartment->Rows->Add(gcnew array<String^>{"" +departList[i]->Id});
-		}
-	}
+	   void showApartment() {
+		   List<Departamento^>^ departList = Service::ConsultaDepa();
+
+		   dgvApartment->Rows->Clear();
+		   for (int i = 0; i < departList->Count; i++) {
+			   dgvApartment->Rows->Add(gcnew array<String^>{
+				   "" + departList[i]->Id,
+					   "" + departList[i]->Piso,
+					   "" + departList[i]->NumDep
+			   });
+		   }
+	   }
+
+
+
 
 
 private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -432,13 +439,15 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	int depaId = Int32::Parse(dgvApartment->Rows[dgvApartment->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString());
 
 	Departamento^ depa = Service::ConsultaDepaByID(depaId);
+
+
 	if (depa != nullptr) {
 		txtId->Text = Convert::ToString(depa->Id);
-		//textPiso->Text = "" + depa->Piso;
-		//txtNumDep->Text = "" + depa->NumDepa;
 		txtPric->Text = "" + depa->Precio;
 		textDimen->Text = "" + depa->Dimensiones;
 		txtHabilitado->Checked = depa->Estado;
+		textPiso -> Text = "" + depa->Piso;
+		txtNumDep -> Text = "" + depa->NumDep;
 
 		if (depa->Photo != nullptr) {
 			System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream(depa->Photo);
@@ -483,14 +492,15 @@ private: System::Void btnUpdate_Click(System::Object^ sender, System::EventArgs^
 	double precio = Convert::ToDouble(txtPric->Text);
 	int piso = Convert::ToInt32(textPiso->Text);
 	double metros = Convert::ToDouble(textDimen->Text);
+	int numdepartamento = Convert::ToInt32(txtNumDep->Text);
 
 	Departamento^ depa = gcnew Departamento();
 	depa->Id = id;
-	//depa->Piso = piso;
-	//depa->NumDepa = numDepa;
 	depa->Precio = precio;
-	depa->Dimensiones = metros;
 	depa->Estado = txtHabilitado->Checked;
+	depa->Dimensiones = dimensiones;
+	depa->Piso = piso;
+	depa->NumDep = numdepartamento;
 
 	if (pictureBox1 != nullptr && pictureBox1->Image != nullptr) {
 		System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();

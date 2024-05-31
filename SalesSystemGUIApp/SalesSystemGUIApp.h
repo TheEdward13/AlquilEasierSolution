@@ -278,5 +278,6 @@ namespace SalesSystemGUIApp {
 		ADinterfaz->Show();
 		this->Hide();
 	}
+
 };
 }

@@ -14,7 +14,6 @@ namespace AlquilEasierPersistance {
 		static List<Usuario^>^ usuariosListDB = gcnew List<Usuario^>();
 		static List<Departamento^>^ depaListDB = gcnew List<Departamento^>();
 		static List<Deudas^>^ deudaListDB = gcnew List<Deudas^>();
-		static List<Floor^>^ floorListDB = gcnew List<Floor^>();
 
 	public:
 		//Archivos BIN
@@ -22,7 +21,6 @@ namespace AlquilEasierPersistance {
 		static String^ BIN_DEPARTAMENTO_FILE_NAME = "departamento.bin";
 		static String^ BIN_DEUDA_FILE_NAME = "deuda.bin";
 		static String^ BIN_DEP_FLOOR_FILE_NAME = "piso.bin";
-		
 
 		//Operaciones para Login
 		static int AddUsuario(Usuario^ usuario);
@@ -40,7 +38,6 @@ namespace AlquilEasierPersistance {
 		static int ModifyDeuda(Deudas^ deuda);
 		static int DeleteDeuda(int deudaID);
 		static List<Deudas^>^ ConsultaDeuda();
-
 
 
 	};

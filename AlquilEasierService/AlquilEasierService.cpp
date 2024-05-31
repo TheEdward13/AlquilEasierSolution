@@ -97,3 +97,7 @@ List<Deudas^>^ AlquilEasierService::Service::ConsultaDeuda()
 {
     return Persistance::ConsultaDeuda();
 }
+
+
+
+

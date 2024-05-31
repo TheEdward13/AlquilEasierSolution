@@ -91,6 +91,8 @@ int AlquilEasierPersistance::Persistance::DeleteApartment(int depaID)
     return 0;
 }
 
+
+
 List<Departamento^>^ AlquilEasierPersistance::Persistance::ConsultaDepa()
 {
     depaListDB = (List<Departamento^>^)LoadBinaryFile(BIN_DEPARTAMENTO_FILE_NAME);
@@ -152,3 +154,5 @@ List<Deudas^>^ AlquilEasierPersistance::Persistance::ConsultaDeuda()
         deudaListDB = gcnew List<Deudas^>();
     return deudaListDB;
 }
+
+

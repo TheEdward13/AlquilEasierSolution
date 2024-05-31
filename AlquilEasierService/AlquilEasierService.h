@@ -32,6 +32,5 @@ namespace AlquilEasierService {
 		static int DeleteDeuda(int deudaID);
 		static List<Deudas^>^ ConsultaDeuda();
 		
-		//añadir para la fecha
 	};
 }

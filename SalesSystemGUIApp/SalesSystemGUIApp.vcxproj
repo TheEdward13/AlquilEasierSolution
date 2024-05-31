@@ -151,9 +151,6 @@
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="SalesSystemGUIApp.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="USER_infoDepa.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -182,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USER_Recibos.resx">
       <DependentUpon>USER_Recibos.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalesSystemGUIApp.resx">
-      <DependentUpon>SalesSystemGUIApp.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USER_infoDepa.resx">
       <DependentUpon>USER_infoDepa.h</DependentUpon>

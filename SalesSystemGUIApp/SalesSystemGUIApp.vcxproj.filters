@@ -47,9 +47,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SalesSystemGUIApp.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="ApartmentForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>

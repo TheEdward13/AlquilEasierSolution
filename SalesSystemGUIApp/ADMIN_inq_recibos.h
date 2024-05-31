@@ -1,4 +1,5 @@
 #pragma once
+#include "ComboBoxItem.h"
 
 namespace SalesSystemGUIApp {
 
@@ -372,7 +373,25 @@ namespace SalesSystemGUIApp {
 		recibo->Seguridad = security;
 
 
+
+
+
 	}
+
+		   /*void FillCmbAccompaniments() {
+			   List<Departamento^>^ depaList = Service::();
+			   if (depaList != nullptr) {
+				   comboBoxPiso->Items->Clear();
+				   for (int i = 0; i < depaList->Count; i++) {
+					   comboBoxPiso->Items->Add(gcnew ComboBoxItem(depaList[i]->Id,
+						   depaList[i]->));
+				   }
+			   }
+		   }
+
+		   */
+
+
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	ClearControls();
 }

@@ -16,6 +16,8 @@ namespace AlquilEasierModel {
         property Double Deuda;
         property Double Seguridad;
 
+
+
         void RegistrarDeuda();
         void ConsultarDeuda();
         void ConsultarEstado();
