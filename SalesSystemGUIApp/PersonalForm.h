@@ -432,6 +432,7 @@ private:
             this->tabPage2->Controls->Remove(currentCheckedListBox);
         }
 
+        //COMENTARIO
         // Crear un nuevo CheckedListBox
         currentCheckedListBox = gcnew CheckedListBox();
         currentCheckedListBox->Size = System::Drawing::Size(this->Width / 2, 320); // Tamaño personalizado
