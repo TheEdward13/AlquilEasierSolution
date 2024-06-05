@@ -142,6 +142,7 @@ namespace SalesSystemGUIApp {
 		ADMIN_inquilino^ inquilino = gcnew ADMIN_inquilino();
 		inquilino->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_interfaz::ADMIN_inquilinoClosed);
 		inquilino->Show();
+		this->Hide();
 	}
 
 	// Función para mostrar nuevamente ADMIN_interfaz cuando ApartmentForm se cierra

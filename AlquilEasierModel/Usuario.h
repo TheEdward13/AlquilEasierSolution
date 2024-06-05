@@ -5,6 +5,7 @@
 
 using namespace System;
 namespace AlquilEasierModel {
+    [Serializable]
     public ref class Usuario {
     public:
         property int Id;

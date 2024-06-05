@@ -41,6 +41,7 @@ namespace SalesSystemGUIApp {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 	protected:
 
 
@@ -65,6 +66,7 @@ namespace SalesSystemGUIApp {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -125,27 +127,40 @@ namespace SalesSystemGUIApp {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &ADMIN_inquilino::button5_Click);
 			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button6->Location = System::Drawing::Point(-1, 0);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->TabIndex = 29;
+			this->button6->Text = L"Atrás";
+			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &ADMIN_inquilino::button6_Click);
+			// 
 			// ADMIN_inquilino
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Info;
-			this->ClientSize = System::Drawing::Size(407, 593);
+			this->ClientSize = System::Drawing::Size(407, 555);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"ADMIN_inquilino";
-			this->Text = L"ADMIN_inquilino";
+			this->Text = L"Administrador - inquilinos";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		ADMIN_inq_recibos^ inq_recibos = gcnew ADMIN_inq_recibos();
-		//inq_recibos->MdiParent = this;
+		inq_recibos->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_inquilino::ADMIN_inq_recibosClosed);
 		inq_recibos->Show();
+		this->Hide();
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	/*CÓDIGO HACER CLICK Y AGREGAR USUARIO*/
@@ -154,8 +169,22 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	ADMIN_inq_infodep^ inq_infodep = gcnew ADMIN_inq_infodep();
-	//inq_infodep->MdiParent = this;
+	inq_infodep->FormClosed += gcnew FormClosedEventHandler(this, &ADMIN_inquilino::ADMIN_inq_infodepClosed);
 	inq_infodep->Show();
+	this->Hide();
 }
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+	   // Función para mostrar nuevamente ADMIN_interfaz cuando ApartmentForm se cierra
+	   void ADMIN_inquilino::ADMIN_inq_recibosClosed(System::Object^ sender, FormClosedEventArgs^ e)
+	   {
+		   this->Show();
+	   }
+	   // Función para mostrar nuevamente ADMIN_interfaz cuando ApartmentForm se cierra
+	   void ADMIN_inquilino::ADMIN_inq_infodepClosed(System::Object^ sender, FormClosedEventArgs^ e)
+	   {
+		   this->Show();
+	   }
 };
 }

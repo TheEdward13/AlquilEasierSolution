@@ -20,7 +20,7 @@ namespace AlquilEasierPersistance {
 		static String^ BIN_USUARIO_FILE_NAME = "usuarios.bin";
 		static String^ BIN_DEPARTAMENTO_FILE_NAME = "departamento.bin";
 		static String^ BIN_DEUDA_FILE_NAME = "deuda.bin";
-		static String^ BIN_DEP_FLOOR_FILE_NAME = "piso.bin";
+		
 
 		//Operaciones para Login
 		static int AddUsuario(Usuario^ usuario);
