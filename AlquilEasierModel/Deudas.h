@@ -15,22 +15,14 @@ namespace AlquilEasierModel {
         property Double Alquiler;
         property Double Deuda;
         property Double Seguridad;
-
+        property int Month;
+        property int Year;
 
 
         void RegistrarDeuda();
         void ConsultarDeuda();
         void ConsultarEstado();
     };
-
-    [Serializable]
-    public ref class fechas {
-    public:
-        property int Id;
-        property String^ Month;
-        property String^ Year;
-    };
-
 }
 
 #endif //_DEUDAS_H

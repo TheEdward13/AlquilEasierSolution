@@ -334,7 +334,6 @@ namespace SalesSystemGUIApp {
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::Info;
 			this->ClientSize = System::Drawing::Size(647, 618);
-			this->ControlBox = false;
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->txtHabilitado);
 			this->Controls->Add(this->textPiso);
@@ -419,7 +418,6 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 
 	   void showApartment() {
 		   List<Departamento^>^ departList = Service::ConsultaDepa();
-
 		   dgvApartment->Rows->Clear();
 		   for (int i = 0; i < departList->Count; i++) {
 			   dgvApartment->Rows->Add(gcnew array<String^>{
@@ -429,9 +427,6 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 			   });
 		   }
 	   }
-
-
-
 
 
 private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
