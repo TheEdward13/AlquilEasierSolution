@@ -122,6 +122,8 @@
   <ItemGroup>
     <ClCompile Include="ApartmentForm.cpp" />
     <ClCompile Include="DepaForm.cpp" />
+    <ClCompile Include="LoginForm.cpp" />
+    <ClCompile Include="PersonalForm.cpp" />
     <ClCompile Include="SalesSystemGUIApp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +131,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DepaForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LoginForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PersonalForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SalesSystemGUIApp.h">
@@ -142,6 +150,12 @@
     <EmbeddedResource Include="DepaForm.resx">
       <DependentUpon>DepaForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalForm.resx">
+      <DependentUpon>PersonalForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesSystemGUIApp.resx">
       <DependentUpon>SalesSystemGUIApp.h</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +163,9 @@
   <ItemGroup>
     <ProjectReference Include="..\AlquilEasierModel\AlquilEasierModel.vcxproj">
       <Project>{d21f6e28-4677-47d9-894e-3838b943d51e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\AlquilEasierPersistance\AlquilEasierPersistance.vcxproj">
+      <Project>{55b737ad-4bc4-414c-aafb-e3fcf12386e5}</Project>
     </ProjectReference>
     <ProjectReference Include="..\AlquilEasierService\AlquilEasierService.vcxproj">
       <Project>{9cf7db29-e0c3-4a51-b265-ea68fd371617}</Project>

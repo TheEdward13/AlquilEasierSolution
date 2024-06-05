@@ -2,6 +2,7 @@
 
 #include "AlquilEasierService.h"
 
+using namespace AlquilEasierPersistance;
 
 int AlquilEasierService::Service::AddApartment(Departamento^ Departamento)
 {
@@ -34,3 +35,72 @@ Departamento^ AlquilEasierService::Service::ConsultaDepaByID(int depaID)
     }
     return nullptr;
 }
+
+//De Roberto:
+//Control del Login
+
+//NOTA: SE PUEDE REUSAR FUNCIONES ADD Y QUERY PARA UN POSTERIOR CRUD/PERSISTENCIA
+int AlquilEasierService::Service::AddUsuario(Usuario^ usuario)
+{
+    return Persistance::AddUsuario(usuario);
+}
+
+List<Usuario^>^ AlquilEasierService::Service::QueryAllUsuarios()
+{
+    return Persistance::QueryAllUsuarios();
+}
+
+Usuario^ AlquilEasierService::Service::ValidateUsuario(String^ username, String^ password)
+{
+    Usuario^ result = nullptr;
+    List<Usuario^>^ ussuariosList = QueryAllUsuarios();
+    for (int i = 0; i < ussuariosList->Count; i++) {
+        Usuario^ usuario = ussuariosList[i];
+        if (usuario->Username->Equals(username) && usuario->Password->Equals(password))
+            result = usuario;
+    }
+    return result;
+}
+
+
+/*HABITACIONES LIMPIAS*/
+
+int AlquilEasierService::Service::AddHabitacionLimpia(HabitacionMantenimiento^ habitacionLimpia)
+{
+    //habitacionesLimpiasDB->Add(habitacionLimpia);
+    //return habitacionLimpia->Id;
+
+    return Persistance::AddHabitacionLimpia(habitacionLimpia);
+
+}
+
+int AlquilEasierService::Service::UpdateHabitacionLimpia(HabitacionMantenimiento^ habitacionLimpia)
+{
+    for (int i = 0; i < habitacionesLimpiasDB->Count; i++) {
+        if (habitacionesLimpiasDB[i]->Id == habitacionLimpia->Id) {
+            habitacionesLimpiasDB[i] = habitacionLimpia;
+            return habitacionLimpia->Id;
+        }
+        return 0;
+    }
+}
+
+List<HabitacionMantenimiento^>^ AlquilEasierService::Service::ConsultarHabitacionesLimpias()
+{
+    return habitacionesLimpiasDB;
+}
+
+HabitacionMantenimiento^ AlquilEasierService::Service::ConsultarHabitacionesLimpiasPorId(int habitacionLimpiaId)
+{
+    for (int i = 0; i < habitacionesLimpiasDB->Count; i++) {
+        if (habitacionesLimpiasDB[i]->Id == habitacionLimpiaId) {
+            return habitacionesLimpiasDB[i];
+        }
+        return nullptr;
+    }
+}
+
+
+
+
+

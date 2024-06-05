@@ -9,19 +9,18 @@
   * Departamento implementation
   */
 
-
-void AlquilEasierModel::Departamento::RegistrarDepa() {
-
+void AlquilEasierModel::RegistrarDepa()
+{
 }
 
-void AlquilEasierModel::Departamento::ModificarDatos() {
-
+void AlquilEasierModel::ModificarDatos()
+{
 }
 
-void AlquilEasierModel::Departamento::ConsultarDatos() {
-
+void AlquilEasierModel::ConsultarDatos()
+{
 }
 
-void AlquilEasierModel::Departamento::SituacionAccidentes() {
-
+void AlquilEasierModel::SituacionAccidentes()
+{
 }

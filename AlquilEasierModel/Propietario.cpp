@@ -37,3 +37,5 @@ void AlquilEasierModel::Propietario::InformeQuejas() {
 void AlquilEasierModel::Propietario::SitucionAccidentes() {
 
 }
+
+

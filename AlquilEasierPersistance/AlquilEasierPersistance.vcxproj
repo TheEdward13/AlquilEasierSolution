@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{9CF7DB29-E0C3-4A51-B265-EA68FD371617}</ProjectGuid>
+    <ProjectGuid>{55B737AD-4BC4-414C-AAFB-E3FCF12386E5}</ProjectGuid>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>AlquilEasierService</RootNamespace>
+    <RootNamespace>AlquilEasierPersistance</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -119,12 +119,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AlquilEasierService.h" />
+    <ClInclude Include="AlquilEasierPersistance.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AlquilEasierService.cpp" />
+    <ClCompile Include="AlquilEasierPersistance.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -147,9 +147,6 @@
   <ItemGroup>
     <ProjectReference Include="..\AlquilEasierModel\AlquilEasierModel.vcxproj">
       <Project>{d21f6e28-4677-47d9-894e-3838b943d51e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\AlquilEasierPersistance\AlquilEasierPersistance.vcxproj">
-      <Project>{55b737ad-4bc4-414c-aafb-e3fcf12386e5}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
